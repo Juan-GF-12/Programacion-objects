@@ -1,6 +1,6 @@
 import bcrypt
 
-# Hashear una contraseña antes de almacenarla
+# editar la contraseña antes de almacenarla
 def hash_contraseña(contraseña):
     return bcrypt.hashpw(contraseña.encode(), bcrypt.gensalt())
 
