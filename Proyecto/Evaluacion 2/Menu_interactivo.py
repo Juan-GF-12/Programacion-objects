@@ -1,13 +1,13 @@
 import mysql.connector
 from colorama import Fore, Style
 
-# Configuración para conectar a la base de datos en XAMPP
+#Aqui hubiera estado la coneccion a la base de datos pero no pude darle temrino :C
 def conectar_bd():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="",  # Cambia si tienes una contraseña
-        database="ecotech_db"  # Cambia al nombre de tu base de datos en XAMPP
+        password="",  
+        database="ecotech_db"  
     )
 
 # Función para registrar un nuevo empleado
