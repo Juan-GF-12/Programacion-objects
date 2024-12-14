@@ -1,7 +1,7 @@
 import mysql.connector
 from colorama import Fore, Style
+import os
 
-#Aqui hubiera estado la coneccion a la base de datos pero no pude darle temrino :C
 def conectar_bd():
     return mysql.connector.connect(
         host="localhost",
@@ -161,10 +161,37 @@ def generar_informes():
     db.close()
     print(Fore.GREEN + "Informe generado." + Style.RESET_ALL)
 
+# Función para mostrar empleados con su ID
+def mostrar_empleados():
+    db = conectar_bd()
+    cursor = db.cursor()
+    print(Fore.GREEN + "Mostrando lista de empleados..." + Style.RESET_ALL)
+    
+    query = "SELECT id, nombre FROM empleados"
+    cursor.execute(query)
+    resultados = cursor.fetchall()
+    
+    if resultados:
+        os.system("cls")
+        print(Fore.BLUE + "ID | Nombre" + Style.RESET_ALL)
+        print("-" * 30)
+        for empleado in resultados:
+            print(f"{empleado[0]:<3} | {empleado[1]}")
+        
+    else:
+        print(Fore.YELLOW + "No hay empleados registrados." + Style.RESET_ALL)
 
-# Menú principal interactivo con colores
+    Espera=input("Enter para continuar..")
+  
+    cursor.close()
+    db.close()
+
+
+
+# Menú principal interactivo 
 def menu():
     while True:
+        os.system("cls")
         print(Fore.GREEN + Style.BRIGHT + "\n*** Sistema de Gestión de Empleados de EcoTech Solutions ***" + Style.RESET_ALL)
         print("1. Registrar nuevo empleado")
         print("2. Gestión de departamentos")
@@ -172,8 +199,9 @@ def menu():
         print("4. Registro de tiempo")
         print("5. Gestión de proyectos")
         print("6. Asignación de empleados a proyectos")
-        print("7. Generar informes")
-        print("8. Salir")
+        print("7. Mostrar empleados")
+        print("8. Generar informes")
+        print("9. Salir")
         
         opcion = input(Fore.CYAN + "Selecciona una opción: " + Style.RESET_ALL)
         
@@ -190,8 +218,10 @@ def menu():
         elif opcion == '6':
             asignar_empleado_proyecto()
         elif opcion == '7':
-            generar_informes()
+            mostrar_empleados()
         elif opcion == '8':
+            generar_informes()
+        elif opcion == '9':
             print(Fore.RED + "Saliendo del sistema... ¡Hasta luego!" + Style.RESET_ALL)
             break
         else:
