@@ -7,3 +7,4 @@ def hash_contraseña(contraseña):
 # Validar una contraseña al inicio de sesión
 def validar_contraseña(contraseña, hash_guardado):
     return bcrypt.checkpw(contraseña.encode(), hash_guardado)
+#holaasdasd
