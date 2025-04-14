@@ -1,0 +1,93 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+
+    background-image: url('imagenes/body_image.jpg'); 
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+}
+  
+  
+.servicio-card {
+    transition: transform 0.5s ease;
+    height: 300px;
+  }
+.servicio-card:hover {
+    transform: scale(1.05);
+  }
+  
+.servicio-card img {
+    height: 150px;}
+
+.card-body {
+    color: black !important;
+    }
+.card {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+}
+  
+
+#mainNav {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    background-image: url("imagenes/img_bar.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+.navbar-brand {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: transform 0.5s ease;
+    color: rgb(243, 234, 234);
+    text-shadow: 2px 2px 4px rgba(43, 1, 1, 0.692)
+
+}
+
+.navbar-brand:hover{
+    transform: scale(1.05);
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+/*carousel */
+
+.carousel-item {
+    height: 250px;
+  }
+
+.carousel-item img { 
+    object-fit: cover
+    ;}
+
+.carousel-caption { color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.692);
+    
+}
+
+.contact-form {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border: none;
+}
+
+.text-center {color: white} 
+
+.nav-link {font-size: 1.2rem;
+color: whitesmoke;
+text-shadow: 2px 2px 4px rgba(43, 1, 1, 0.692);
+}
